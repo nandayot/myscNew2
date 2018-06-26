@@ -7,7 +7,7 @@
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.ferna.mysc.MainActivity">
+    tools:context="com.example.ferna.mysc.CadastroActivity">
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,20 +32,37 @@
         android:inputType="textPassword"
         android:singleLine="true" />
 
-    <Button
-        android:id="@+id/btLogin"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Login"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="10dp"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/tEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:singleLine="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Data de Nascimento" />
+
+    <EditText
+        android:id="@+id/tNascimento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="date"
+        android:singleLine="true" />
 
     <Button
-        android:id="@+id/btCadastrar"
+        android:id="@+id/btCadastro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
+        android:layout_marginTop="30dp"
         android:text="Cadastrar"
         android:textColor="#ffffff"
         android:layout_gravity="center" />
