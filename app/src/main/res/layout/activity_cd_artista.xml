@@ -1,45 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:gravity="center_vertical"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.example.ferna.mysc.MainActivity">
+    tools:context="com.example.ferna.mysc.cdArtistaActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario" />
-
+        android:text="Nome" />
     <EditText
-        android:id="@+id/tLogin"
+        android:id="@+id/tNome"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="text" android:singleLine="true"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="Senha" />
-
+        android:text="Data de nascimento/fundação" />
     <EditText
-        android:id="@+id/tSenha"
+        android:id="@+id/tData"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:singleLine="true" />
+        android:inputType="text|date" android:singleLine="true"/>
 
-    <Button
-        android:id="@+id/btLogin"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Login"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"/>
+        android:layout_marginTop="10dp"
+        android:text="Nacionalidade" />
+    <EditText
+        android:id="@+id/tNacionalidade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" android:singleLine="true"/>
 
     <Button
         android:id="@+id/btCadastrar"
@@ -49,14 +48,5 @@
         android:text="Cadastrar"
         android:textColor="#ffffff"
         android:layout_gravity="center" />
-
-    <Button
-        android:id="@+id/btSair"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:text="Sair"
-        android:textColor="#ffffff"
-        android:layout_gravity="center"/>
 
 </LinearLayout>

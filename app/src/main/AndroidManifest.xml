@@ -20,7 +20,15 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".CadastroActivity" />
-        <activity android:name=".HomeActivity"></activity>
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".cdMusicaActivity" />
+        <activity android:name=".cdArtistaActivity" />
+        <activity android:name=".ListarMusicaActivity" />
+        <activity android:name=".MusicaExpandidaActivity" />
+        <activity android:name=".ListarArtistaActivity" />
+        <activity android:name=".ArtistaExpandidoActivity" />
+        <activity android:name=".EditarMusicaActivity" />
+        <activity android:name=".EditarArtistaActivity"></activity>
     </application>
 
 </manifest>

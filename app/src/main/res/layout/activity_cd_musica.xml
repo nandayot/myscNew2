@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.ferna.mysc.cdMusicaActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome da música" />
+    <EditText
+        android:id="@+id/tNomeMusica"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" android:singleLine="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Letra" />
+    <EditText
+        android:id="@+id/tLetra"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="top|left"
+        android:inputType="textMultiLine"
+        android:overScrollMode="always"
+        android:scrollbarStyle="insideInset"
+        android:scrollbars="vertical"
+        android:lines="6"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:scrollHorizontally="false"
+        android:background="@layout/border"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Compositor" />
+    <EditText
+        android:id="@+id/tCompositor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" android:singleLine="true"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Artista" />
+    <EditText
+        android:id="@+id/tArtista"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text" android:singleLine="true"/>
+
+    <Button
+        android:id="@+id/btCadastrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Cadastrar"
+        android:textColor="#ffffff"
+        android:layout_gravity="center" />
+
+</LinearLayout>

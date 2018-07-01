@@ -2,8 +2,13 @@ package com.example.ferna.mysc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.view.MenuItemCompat;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.SearchView;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -19,8 +24,46 @@ public class MainActivity extends AppCompatActivity {
         buttonRegister.setOnClickListener(onClickCadastroActivity());
         Button btLogin = (Button) findViewById(R.id.btLogin);
         btLogin.setOnClickListener(onClickLogin());
+        Button btSair = (Button) findViewById(R.id.btSair);
+        btSair.setOnClickListener(onClickSair());
+        //Título
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Login");
 
+    }
 
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem item = menu.findItem(R.id.action_refresh);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+
+        if(id == R.id.action_refresh){
+            TextView tLogin = (TextView) findViewById(R.id.tLogin);
+            TextView tSenha = (TextView) findViewById(R.id.tSenha);
+
+            tLogin.setText("");
+            tSenha.setText("");
+
+            alert("Clicou em atualizar.");
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private View.OnClickListener onClickSair(){
+        return new Button.OnClickListener(){
+
+            public void onClick(View v){
+                finish();
+            }
+        };
     }
 
     private View.OnClickListener onClickLogin() {
@@ -34,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
                 String login = tLogin.getText().toString();
                 String senha = tSenha.getText().toString();
 
-                UsuarioDB udb = new UsuarioDB(getContext());
+                ConteudoBD udb = new ConteudoBD(getContext());
                 Usuario usuario = null;
 
                 usuario = udb.buscarUsuario(login);
@@ -50,6 +93,9 @@ public class MainActivity extends AppCompatActivity {
                         params.putString("anterior", "Home");
                         intent.putExtras(params);
                         startActivity(intent);
+                    }
+                    else {
+                        alert("Login ou senha incorretos");
                     }
                 }
                 else {
