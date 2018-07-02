@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
     {
         getMenuInflater().inflate(R.menu.menu_main, menu);
 
-        MenuItem item = menu.findItem(R.id.action_refresh);
-
         return super.onCreateOptionsMenu(menu);
     }
 

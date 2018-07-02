@@ -2,6 +2,7 @@ package com.example.ferna.mysc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,7 +11,6 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import static com.example.ferna.mysc.R.menu.*;
 
 public class ArtistaExpandidoActivity extends AppCompatActivity {
     protected static final String TAG = "BANCO";
@@ -39,11 +39,19 @@ public class ArtistaExpandidoActivity extends AppCompatActivity {
         nome.setText("NOME:  "+nomeArtista);
         data.setText("DATA:  "+dataArtista);
         nacionalidade.setText("NACIONALIDADE: "+nacionalidadeArtista);
+
+        //Título
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Detalhes do artista");
+
+        //Botão de voltar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(menu_editar, menu);
+        getMenuInflater().inflate(R.menu.menu_editar_am, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -51,6 +59,11 @@ public class ArtistaExpandidoActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
 
+        if(id == android.R.id.home){
+            Intent intent = new Intent(getContext(), ListarArtistaActivity.class);
+            startActivity(intent);
+            finish();
+        }
         if(id == R.id.action_edit){
             Intent intent = new Intent( getContext(), EditarArtistaActivity.class);
             startActivity(intent);

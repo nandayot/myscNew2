@@ -2,15 +2,14 @@ package com.example.ferna.mysc;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import static com.example.ferna.mysc.R.menu.*;
 
 public class MusicaExpandidaActivity extends AppCompatActivity {
     protected static final String TAG = "BANCO";
@@ -44,11 +43,18 @@ public class MusicaExpandidaActivity extends AppCompatActivity {
         letra.setText(letraMusica);
         compositor.setText("COMPOSITOR: "+compositorMusica);
         artista.setText("ARTISTA:  "+artistaMusica);
+
+        //Título
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setTitle("Detalhes da música");
+
+        //Botão de voltar
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(menu_editar, menu);
+        getMenuInflater().inflate(R.menu.menu_editar_am, menu);
 
         return super.onCreateOptionsMenu(menu);
     }
@@ -56,6 +62,11 @@ public class MusicaExpandidaActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item){
         int id = item.getItemId();
 
+        if(id == android.R.id.home){
+            Intent intent = new Intent(getContext(), ListarMusicaActivity.class);
+            startActivity(intent);
+            finish();
+        }
         if(id == R.id.action_edit){
             Intent intent = new Intent( getContext(), EditarMusicaActivity.class);
             startActivity(intent);
